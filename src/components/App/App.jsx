@@ -16,7 +16,6 @@ export class App extends Component {
     filter: '',
   };
   addNewContacts = obj => {
-    // console.log(obj);
     const { name, number } = obj;
 
     const includesName = this.state.contacts.find(
@@ -42,11 +41,14 @@ export class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
+
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
+
   getVisible = () => {
     const normalasedFilter = this.state.filter.toLocaleLowerCase();
+
     return this.state.contacts.filter(contact =>
       contact.name.toLocaleLowerCase().includes(normalasedFilter)
     );
