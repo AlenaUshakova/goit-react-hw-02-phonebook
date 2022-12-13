@@ -15,6 +15,7 @@ export class App extends Component {
     ],
     filter: '',
   };
+
   addNewContacts = obj => {
     const { name, number } = obj;
 
